@@ -1,5 +1,6 @@
-🎤 Joji Echoes — Lyric Bot for X (Twitter)
-Joji Echoes is a minimalist Python bot that posts iconic one-line lyrics from Joji’s discography to X (formerly Twitter). Designed for fans, built for automation, and deployed via Heroku.
+🎤 Joji Echoes — Lyric Bot for X
+
+Joji Echoes is a minimalist Python bot that posts iconic one-line lyrics from Joji’s discography to X. Designed for fans, built for automation, and deployed via Heroku.
 
 📦 Features:
 
