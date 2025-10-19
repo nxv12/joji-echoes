@@ -10,7 +10,6 @@ A scheduled Twitter bot that posts one Joji lyric every day at 3AM AEST. Built w
 -  Manual test mode for safe, non-logged runs  
 -  Duplicate filtering via `posted.txt`  
 -  Secrets managed securely with GitHub Actions  
--  Lyric curation from `lyrics.txt`
 
 ---
 
