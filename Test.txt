@@ -1,0 +1,6 @@
+Test results
+
+Run 1: Failed
+Run 2: Success
+Prevent duplicate and error handling
+Run 1: Success
