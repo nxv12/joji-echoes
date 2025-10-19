@@ -46,10 +46,3 @@ Run the bot with `--test` to skip logging the lyric to `posted.txt`. Useful for 
 [@JojiEchoes on X](https://x.com/JojiEchoes)
 
 ---
-
-##  Ideas for Expansion
-  
-- Dry-run preview mode  
-- Lyric scraping from Genius  
-- Bonus tweet scheduler  
-- Quote-only mode for Joji replies
