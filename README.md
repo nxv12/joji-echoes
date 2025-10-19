@@ -1,71 +1,56 @@
-🎤 Joji Echoes — Lyric Bot for X
+#  Joji Echoes Bot
 
-Joji Echoes is a minimalist Python bot that posts iconic one-line lyrics from Joji’s discography to X. Designed for fans, built for automation, and deployed via Heroku.
+A scheduled Twitter bot that posts one Joji lyric every day at 3AM AEST. Built with Python, GitHub Actions, and emotional resonance.
 
-📦 Features:
+---
 
-- Posts one lyric at a time from a curated lyrics.txt file
-- Uses X API v2 via Tweepy’s Client.create_tweet()
-- Reads secrets from .env or Heroku config vars
-- Deployable via Heroku with scheduled tweets
-- Easy to customize, expand, and remix
+##  Features
 
-Getting Started:
+-  Daily tweets via GitHub Actions  
+-  Manual test mode for safe, non-logged runs  
+-  Duplicate filtering via `posted.txt`  
+-  Secrets managed securely with GitHub Actions  
+-  Lyric curation from `lyrics.txt`
 
-1. Clone the repo
-git clone https://github.com/yourusername/joji-echoes.git
-cd joji-echoes
+---
 
-2. Create your .env file
-env
-API_KEY=your_api_key
-API_KEY_SECRET=your_api_key_secret
-ACCESS_TOKEN=your_access_token
-ACCESS_TOKEN_SECRET=your_access_token_secret
-BEARER_TOKEN=your_bearer_token
+##  How It Works
 
-3. Install dependencies
-python -m pip install -r requirements.txt
+- Selects a random lyric from `lyrics.txt`  
+- Skips previously posted lyrics using `posted.txt`  
+- Tweets via Twitter API using GitHub Secrets  
+- Runs daily at 3AM AEST (`cron: '0 16 * * *'`)  
+- Supports manual runs with `--test` flag
 
-4. Run the bot
-python app.py
+---
 
-🗂 Project Structure:
+##  Files
 
-joji-echoes/
-- app.py              # Main bot logic
-- lyrics.txt          # One-line lyrics (one per song)
-- requirements.txt    # Dependencies
-- Procfile            # Heroku process declaration
-- .env                # API keys (local use only)
+| File         | Purpose                          |
+|--------------|----------------------------------|
+| `app.py`     | Main bot logic                   |
+| `lyrics.txt` | Source of Joji lyrics            |
+| `posted.txt` | Tracks posted lyrics             |
+| `.env`       | Local secrets (excluded from repo)  
+| `bot.yml`    | GitHub Actions workflow          |
 
-☁️ Deploying to Heroku:
+---
 
-1. Create app
-heroku create joji-echoes
+##  Test Mode
 
-2. Set config vars
-heroku config:set API_KEY=... API_KEY_SECRET=... ACCESS_TOKEN=... ACCESS_TOKEN_SECRET=... BEARER_TOKEN=...
+Run the bot with `--test` to skip logging the lyric to `posted.txt`. Useful for manual bonus tweets or debugging.
 
-3. Push code
-git add .
-git commit -m "Initial commit"
-git push heroku main
+---
 
-4. Add Heroku Scheduler
-heroku addons:create scheduler:standard
-heroku addons:open scheduler
+##  Follow the bot
 
-Schedule: python app.py every 6 hours or daily
+[@JojiEchoes on X](https://x.com/JojiEchoes)
 
-🎨 Customization Ideas:
+---
 
-- Add hashtags or emojis to tweets
-- Prevent duplicate lyrics
-- Rotate themes (e.g., sad Joji, romantic Joji)
-- Add images or album art
-- Integrate with other fan bots
-
-🧠 Credits:
-
-Curated and built by Naveed Naleem Inspired by Joji’s discography and the art of quiet resonance.
+##  Ideas for Expansion
+  
+- Dry-run preview mode  
+- Lyric scraping from Genius  
+- Bonus tweet scheduler  
+- Quote-only mode for Joji replies
