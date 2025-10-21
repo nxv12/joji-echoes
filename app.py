@@ -2,7 +2,9 @@ import os
 import random
 import tweepy
 from dotenv import load_dotenv
-import argparse
+import argparse 
+import pytz
+from datetime import datetime
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser()
@@ -44,17 +46,30 @@ def pick_lyric(path="lyrics.txt", history="posted.txt", log=True):
             h.write(chosen + "\n")
     return chosen
 
+#Bot run logging
+def log_run(status, tweet=None, error=None, logfile="logs.txt"):
+    tz = pytz.timezone("Australia/Melbourne")
+    now = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+    with open(logfile, "a", encoding="utf-8") as f:
+        if status == "success":
+            f.write(f"[{now}] SUCCESS: {tweet}\n")
+        else:
+            f.write(f"[{now}] ERROR: {error}\n")
+
 # Main bot logic
 def main():
     tweet = pick_lyric(log=not args.test)
     if not tweet:
         print("No new lyrics to post.")
+        log_run("error", error="No new lyrics to post.")
         return
     try:
         response = client.create_tweet(text=tweet)
-        print(f"Tweeted: {tweet}\nTweet ID: {response.data['id']}")
+        print(f"Tweeted: {tweet}\nTweet ID: {response.data['id']}") 
+        log_run("success", tweet=tweet)
     except Exception as e:
         print(f"Error posting tweet: {e}")
+        log_run("error", error=str(e))
 
 if __name__ == "__main__":
     main()
