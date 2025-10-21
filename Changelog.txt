@@ -42,3 +42,8 @@ Removed sensitive setup instructions to allow safe cloning
 Added runlog.txt to track each tweet attempt
 Logged timestamp (in AEST), tweet content, and success/error status
 Used pytz for timezone-aware logging
+
+21/10/2025 v0.51
+- PIP update
+updated PIP from 23.2.1 to 25.2
+installed pytz
