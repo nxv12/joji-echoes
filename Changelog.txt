@@ -1,0 +1,44 @@
+CHANGE LOG 
+
+
+15/10/2025 v0.1
+- Initial Bot Deployment
+Created app.py to post random Joji lyrics from lyrics.txt
+Implemented duplicate filtering via posted.txt
+Connected to Twitter API using tweepy and .env credentials
+
+18/10/2025 v0.2
+- GitHub Actions Integration
+Added .github/workflows/bot.yml to automate daily runs
+Scheduled bot to run at 3AM AEST using cron: '0 16 * * *'
+Verified successful scheduled and manual runs
+
+18/10/2025 v0.21
+- Manual Run Support
+Enabled workflow_dispatch in GitHub Actions
+Confirmed manual runs do not interfere with scheduled jobs
+
+19/10/2025 v0.3
+- Test Mode Flag
+Added --test flag to app.py using argparse
+Refactored pick_lyric() to skip logging when in test mode
+Verified local and GitHub test runs work without updating posted.txt
+
+19/10/2025 v0.31
+- Security Hardening
+Added .env to .gitignore
+Removed .env from Git history using git rm --cached
+Verified no secrets exposed in repo or commit history
+Confirmed GitHub Secrets are used securely in workflow
+
+20/10/2025 v0.4
+- README Overhaul
+Replaced old README with a clean, public-friendly version
+Documented features, file structure, and bot behavior
+Removed sensitive setup instructions to allow safe cloning
+
+21/10/2025 v0.5
+- Run Log Implementation
+Added runlog.txt to track each tweet attempt
+Logged timestamp (in AEST), tweet content, and success/error status
+Used pytz for timezone-aware logging
