@@ -24,3 +24,10 @@ jobs:
           ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
           BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
         run: python app.py
+      - name: Commit updated logs
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add posted.txt logs.txt
+          git commit -m "Update posted and logs [skip ci]" || echo "No changes to commit"
+          git push  
