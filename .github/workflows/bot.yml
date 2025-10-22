@@ -3,6 +3,9 @@ on:
     - cron: '0 16 * * *'  # runs daily at 4:00 PM UTC = 3:00 AM AEST
   workflow_dispatch:
 
+permissions:
+  contents: write
+  
 name: Joji Echoes Bot
 
 jobs:
