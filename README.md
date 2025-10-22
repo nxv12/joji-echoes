@@ -1,4 +1,4 @@
-#  Joji Echoes Bot v0.51
+#  Joji Echoes Bot v0.6
 
 A scheduled Twitter bot that posts one Joji lyric every day at 3AM AEST. Built with Python, GitHub Actions, and emotional resonance.
 

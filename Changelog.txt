@@ -47,3 +47,8 @@ Used pytz for timezone-aware logging
 - PIP update
 updated PIP from 23.2.1 to 25.2
 installed pytz
+
+22/10/2025 v0.6
+- bot.yml update
+updated bot.yml to have the ability to push repo changes
+updated to also include changes to lyrics.txt and logs.txt when performing a run in the virtual env of github Actions
