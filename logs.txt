@@ -291,3 +291,5 @@
 [2026-08-09 02:22:42] ERROR: No new lyrics to post.
 [2026-08-10 02:24:26] ERROR: No new lyrics to post.
 [2026-08-11 02:44:04] ERROR: No new lyrics to post.
+[2026-08-12 02:49:20] ERROR: 403 Forbidden
+When authenticating requests to the X API v2 endpoints, you must use keys and tokens from a developer App that is attached to a Project. You can create a project via the developer portal.
