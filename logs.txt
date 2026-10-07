@@ -409,3 +409,5 @@ Unauthorized
 Your client app is not configured with the appropriate oauth1 app permissions for this endpoint.
 [2026-10-07 21:10:59] ERROR: 403 Forbidden
 Your client app is not configured with the appropriate oauth1 app permissions for this endpoint.
+[2026-10-07 21:13:20] ERROR: 402 Payment Required
+credits depleted
